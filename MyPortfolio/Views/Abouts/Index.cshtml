@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MyPortfolio.Models.About>
+
+@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Form Layouts</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Layouts</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">About Index</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p>
+        <a class="ri-add-fill btn btn-success" href="/Abouts/Create">Create</a>
+    </p>
+    <table class="table">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Baslik)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FreeLance)
+            </th>
+            <th class="col">
+                @Html.DisplayNameFor(model => model.HakkimdaYazisi)
+            </th>
+            <th class="col">
+                @Html.DisplayNameFor(model => model.Rutbe)
+            </th>
+
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">
+                    <img src="@item.Foto" alt="Alternate Text" class="rounded-circle" width="75" height="75" />
+
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Baslik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FreeLance)
+                </td>
+
+
+                <td>
+                    @Html.Raw(item.HakkimdaYazisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rutbe)
+                </td>
+                <td>
+                    <a class="ri-repeat-line btn btn-warning" href="/About/edit/@item.Id">Edit</a>
+                    <a class="ri-delete-bin-2-line btn btn-danger" href="/About/delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</main>

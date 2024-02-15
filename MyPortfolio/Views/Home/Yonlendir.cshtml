@@ -1,0 +1,30 @@
+﻿@model MyPortfolio.Models.Iletisim
+@{
+    Layout = "~/Views/Shared/Yonlendir_Layout.cshtml";
+}
+<div id="contact" class="container d-flex flex-column contact mb-5">
+    <div class="row mt-2">
+        <form method="post" role="form" class="php-email-form mt-4 ">
+            @using (Html.BeginForm("Yonlendir", "Home", FormMethod.Post))
+            {
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control", placeholder = "Name  & Surname" } })
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                        @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control", placeholder = "Mail" } })
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    @Html.EditorFor(model => model.Konu, new { htmlAttributes = new { @class = "form-control", placeholder = "Subject" } })
+                </div>
+                <div class="form-group mt-3">
+                    @Html.TextAreaFor(model => model.Mesaj, new { @class = "form-control", placeholder = "Message", rows = "5" })
+                </div>
+                <div class="text-center ">
+                    <button id="yonlendir" class="mt-4" type="submit">Send Message</button>
+                </div>
+            }
+        </form>
+    </div>
+</div>

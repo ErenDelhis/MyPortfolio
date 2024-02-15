@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MyPortfolio.Models.Iletisim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Form Layouts</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home/Index">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Layouts</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Iletisim Index</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <table class="table">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Konu)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Mesaj)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Mail)
+            </td>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdSoyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Konu)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mesaj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail)
+                </td>
+                <td>
+
+                    <a class="ri-delete-bin-2-line btn btn-danger" href="/Iletisims/delete/@item.Id">  Delete</a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</main>

@@ -1,0 +1,69 @@
+﻿
+@model IEnumerable<MyPortfolio.Models.Bilgiler>
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>Contact To Me</p>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row mt-2">
+
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-map"></i>
+
+                        <h3>My Address</h3>
+                        <p>@item.Adres </p>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-share-alt"></i>
+                        <h3>Social Profiles</h3>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/erendelhis_/" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BhpNb5KWpSTavJKNs67vUrA%3D%3D" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/ErenDelhis/desktop-tutorial/blob/main/README.md" class="github"><i class="bi bi-github"></i></a>
+                            <a href="https://discord.gg/DgkqR42r3D" class="discord"><i class="bi bi-discord"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-envelope"></i>
+
+                        <h3>Email Me</h3>
+                        <p>@item.Mail</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-phone-call"></i>
+
+                        <h3>Call Me</h3>
+                        <p>@item.Tel</p>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/Home/Yonlendir" class="info-box">Rezervations & Contact</a>
+        </div>
+    </div>
+
+</section>
